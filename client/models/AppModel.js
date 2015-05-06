@@ -2,6 +2,10 @@
 var AppModel = Backbone.Model.extend({
 
   initialize: function(params){
+    // {library: library}
+    // this.set('library', ???)
+    // Library impliclicity assigned in index.html
+
     this.set('currentSong', new SongModel());
     this.set('songQueue', new SongQueue());
 
@@ -13,9 +17,20 @@ var AppModel = Backbone.Model.extend({
     getting called from the window (unless we override it, as we do here). */
 
 
+    //Create .on('enqueue') 
+
+    params.library.on('enqueue', function(song){
+      this.set('songQueue', song);
+    }, this);
+
+
+
     params.library.on('play', function(song){
       this.set('currentSong', song);
     }, this);
   }
+
+
+
 
 });
