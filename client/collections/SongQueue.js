@@ -2,6 +2,12 @@
 var SongQueue = Songs.extend({
 
   initialize: function(){
-  }
+  },
+
+  // playFirst: function() {
+  // 	// Trigger click on first element in songQueue collection
+  	
+  	
+  // }
 
 });
