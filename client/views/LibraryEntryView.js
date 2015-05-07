@@ -11,7 +11,8 @@ var LibraryEntryView = Backbone.View.extend({
       this.model.play();
     },
     'click .addToQueue': function(){
-      this.model.enqueue();   
+      this.model.enqueue();
+      console.log('click .addToQueue in LibraryEntryView: Completed this.model.enqueue()')
     }
   },
 
