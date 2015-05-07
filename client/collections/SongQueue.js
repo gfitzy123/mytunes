@@ -2,12 +2,38 @@
 var SongQueue = Songs.extend({
 
   initialize: function(){
+  	this.on('add', this.enqueue, this);
+  	this.on('dequeue', this.dequeue, this);
+  	this.on('ended', this.playNext, this);
   },
 
-  // playFirst: function() {
-  // 	// Trigger click on first element in songQueue collection
-  	
-  	
-  // }
+  enqueue: function(song) {
+  	if (this.length === 1) {
+  		this.playFirst();
+  	}
+  },
+
+  dequeue: function(song) {
+  	if (this.at(0) === song) {
+  		this.playNext();
+  	} else {
+  		this.remove(song);
+  	}
+  },
+
+  playNext: function() {
+  	this.shift();
+  	if (this.length >= 1) {
+  		this.playFirst();
+  	} else {
+  		this.trigger('stop');
+  	}
+  },
+
+  playFirst: function() {
+  			//must make appView.playerView.model equal this.mode   ls[0]
+  		this.at(0).play();
+  },
+
 
 });

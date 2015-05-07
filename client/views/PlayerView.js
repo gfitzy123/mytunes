@@ -14,8 +14,18 @@ var PlayerView = Backbone.View.extend({
     this.render();
   },
 
+  //Listens for the ended event to occur, 
+
+  events: {
+    'ended' : function() {
+      console.log('PlayerView: Song has ended')
+      this.model.ended();
+    }
+  },
+
   render: function(){
     return this.$el.attr('src', this.model ? this.model.get('url') : '');
   }
+
 
 });

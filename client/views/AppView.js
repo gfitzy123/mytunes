@@ -18,6 +18,13 @@ var AppView = Backbone.View.extend({
       console.log('AppView: AppModel Received add event on songQueue model')
       this.songQueueView.render(collection.get('songQueue'));
     }, this);
+   
+    //On songQueue removal in AppModel, renders the SongQueueView 
+
+    this.model.get('songQueue').on('remove', function(collection){
+      console.log('AppView: AppModel Received remove event on songQueue model')
+      this.songQueueView.render(collection.get('songQueue'));
+    }, this);
   },
 
 
