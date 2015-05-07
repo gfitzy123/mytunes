@@ -20,5 +20,15 @@ var SongQueueView = Backbone.View.extend({
   },
 
 
+  //Create putOnQueue function. Do something. Call this.render
+
+  GO: function(song) {
+  	// app.songQueue.collection.add(song);
+  	this.render(song);
+  }
+
+
+
+
 
 });
