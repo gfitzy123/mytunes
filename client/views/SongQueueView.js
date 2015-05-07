@@ -11,8 +11,13 @@ var SongQueueView = Backbone.View.extend({
   events: {
     'ended' : function() {
       console.log('entered events in SongQueueView')
-     
-    }
+      this.render()
+    },
+
+    // 'enqueue' : function(song) {
+    //   console.log("Entered enqueue")
+    //   this.render(song)
+    // }
   },
 
   render: function(song){

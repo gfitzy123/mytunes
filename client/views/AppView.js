@@ -14,17 +14,17 @@ var AppView = Backbone.View.extend({
       this.playerView.setSong(model.get('currentSong'));
     }, this);
 
-    this.model.get('songQueue').on('add', function(collection){
-      console.log('AppView: AppModel Received add event on songQueue model')
+    this.model.on('enqueue', function(song){
+      console.log('AppView: AppModel Received enqueue event on songQueue model')
       this.songQueueView.render(collection.get('songQueue'));
     }, this);
    
-    //On songQueue removal in AppModel, renders the SongQueueView 
+  //   //On songQueue removal in AppModel, renders the SongQueueView 
 
-    this.model.get('songQueue').on('remove', function(collection){
-      console.log('AppView: AppModel Received remove event on songQueue model')
-      this.songQueueView.render(collection.get('songQueue'));
-    }, this);
+  //   this.model.get('songQueue').on('remove', function(collection){
+  //     console.log('AppView: AppModel Received remove event on songQueue model')
+  //     this.songQueueView.render(collection.get('songQueue'));
+  //   }, this);
   },
 
 

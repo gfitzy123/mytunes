@@ -8,17 +8,17 @@ var SongModel = Backbone.Model.extend({
     this.trigger('play', this);
   },
 
-  enqueue: function(){
-    console.log('SongModel: "enqueue" event triggered')
-  	this.trigger('enqueue', this);
-  },
+  // enqueue: function(){
+  //   console.log('SongModel: "enqueue" event triggered')
+  // 	this.trigger('enqueue', this);
+  // },
 
-  // This function triggers an 'PIZZA' event
+  // // This function triggers an 'PIZZA' event
 
-  ended: function(){
-    console.log('SongModel: "PIZZA" event triggered')
-  	this.trigger('PIZZA', this)
-  }
+  // ended: function(){
+  //   console.log('SongModel: "PIZZA" event triggered')
+  // 	this.trigger('PIZZA', this)
+  // }
 
 });
   

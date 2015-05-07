@@ -34,25 +34,25 @@ var AppModel = Backbone.Model.extend({
 
     // Listens for PIZZA event, removes song from SongQueue collection
 
-    params.library.on('PIZZA', function(currentSong) {
+    // params.library.on('PIZZA', function(currentSong) {
 
-        // Remove song from queue
-        // Play song at songQueue[0]
-        console.log('AppModel.js: songQueue length before remove: ', this.get('songQueue').length)
-        this.get('songQueue').remove(this.get('currentSong'))
-        console.log('AppModel.js: songQueue length after remove: songQueue', this.get('songQueue').length)
+    //     // Remove song from queue
+    //     // Play song at songQueue[0]
+    //     console.log('AppModel.js: songQueue length before remove: ', this.get('songQueue').length)
+    //     this.get('songQueue').remove(this.get('currentSong'))
+    //     console.log('AppModel.js: songQueue length after remove: songQueue', this.get('songQueue').length)
     
-        console.log('AppModel.js: before set currentSong', this.get('currentSong'))
+    //     console.log('AppModel.js: before set currentSong', this.get('currentSong'))
         
-        // this.set('currentSong', this.get('songQueue').at(0));
+    //     // this.set('currentSong', this.get('songQueue').at(0));
 
-        this.set('currentSong', this.get('songQueue').playFirst())
+    //     this.set('currentSong', this.get('songQueue').playFirst())
         
-        console.log('AppModel.js: after set currentSong', this.get('currentSong'))
-        debugger
+    //     console.log('AppModel.js: after set currentSong', this.get('currentSong'))
+     
 
 
-    }, this);
+    // }, this);
 
 
 
